@@ -9,4 +9,6 @@ To run this Demo:
 ================
 
 1. run bower install
-2. lunch server.js with node or use other server of your choice
+2. run npm install
+3. lunch server.js with node
+4. point your browser to localhost:8888
