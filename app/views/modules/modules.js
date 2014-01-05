@@ -10,14 +10,17 @@ define(['app'], function (app) {
             ready: false
         };
 
-        /**
-         * load the module using the ocLazyLoad service
-         */
-        $ocLazyLoad.load({
-            name: 'Utils',
-            files: ['resources/modules/utils.js']
-        }).then(function () {
-                $scope.module.ready = true;
-            });
+
+        $scope.loadModule = function () {
+
+            $ocLazyLoad.load({
+                name: 'Utils',
+                files: ['resources/modules/utils.js']
+
+            }).then(function () {
+                    $scope.module.ready = true;
+                });
+        }
+
     })
 });
