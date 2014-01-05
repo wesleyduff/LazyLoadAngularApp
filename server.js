@@ -5,7 +5,6 @@ var http = require("http"),
     mime = require("mime"),
     port = 8888;
 
-
 http.createServer(function (request, response) {
 
     /**
