@@ -14,4 +14,5 @@ To run this Demo:
 3. run server.js with (node)
 4. point your browser to localhost:8888
 
-#### fell free to contact me at [nirkaufman@gmail.com](http://example.net/)
+#### Link to slides [view slides](https://docs.google.com/presentation/d/1HfenmUwq3_39ZrVGXfkN5XH_x5bzgfF-QgSGcotjSz4/edit?usp=sharing)
+#### need support with this demo? [nirkaufman@gmail.com](nirkaufman@gmail.com)
