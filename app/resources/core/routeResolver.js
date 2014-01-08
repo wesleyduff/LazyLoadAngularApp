@@ -1,4 +1,4 @@
-define(function () {
+define(['angular'],function () {
     /**
      * this service returns a valid route definition object
      * for the angular route 'when' method
