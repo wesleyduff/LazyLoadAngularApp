@@ -1,4 +1,4 @@
-define(function () {
+define(['angular'], function (angular) {
 
     /**
      * just a dummy module for demonstration.

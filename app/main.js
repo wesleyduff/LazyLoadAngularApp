@@ -4,17 +4,23 @@
  */
 
 require.config({
-
+    baseUrl : '',
     paths: {
-        'angular': 'components/angular/angular.min',
-        'angular-route': 'components/angular-route/angular-route.min',
-        'route-resolver' : 'resources/core/routeResolver',
-        'oc-lazy-load' : 'resources/core/ocLazyLoad',
+        'angular': 'components/angular/angular',
+        'ui.router': 'components/angular-ui-router/release/angular-ui-router',
+        'oc-lazy-load' : 'components/oclazyload/dist/ocLazyLoad',
+        'domReady': 'components/domReady/domReady',
+        'jQuery' : 'components/jQuery/dist/jquery.min',
         'app' : 'app'
-    }
-});
-
-require(['angular', 'angular-route', 'route-resolver','oc-lazy-load','app'], function () {
-
-    angular.bootstrap(document, ['App']);
+    },
+    shim: {
+        'angular' : {
+            exports : 'angular'
+        },
+        'ui.router' : ['angular'],
+        'oc-lazy-load' : ['angular'],
+        'domReady' : ['angular'],
+        'jQuery' : []
+    },
+    deps : ['bootstrap']
 });
