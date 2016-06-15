@@ -1,10 +1,10 @@
 define([
-    'require',
-    'angular',
-    'domReady',
-    './app',
-    './config'],
-    function(require, angular, domReady){
+        'domReady', 
+        'angular', 
+        'app', 
+        'config'
+    ],
+    function(domReady, angular){
         domReady(function(document){
             angular.bootstrap(document, ['marketingAdmin']);
         });

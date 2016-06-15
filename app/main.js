@@ -6,24 +6,23 @@
 require.config({
     baseUrl : '',
     paths: {
-        'angular': 'components/angular/angular',
-        'ui.router': 'components/angular-ui-router/release/angular-ui-router',
-        'oc-lazy-load' : 'components/oclazyload/dist/ocLazyLoad',
+        'angular': 'components/angular/angular.min',
+        'ui.router': 'components/angular-ui-router/release/angular-ui-router.min',
+        'oc-lazy-load' : 'components/oclazyload/dist/ocLazyLoad.min',
         'domReady': 'components/domReady/domReady',
         //'jQuery' : 'components/jQuery/dist/jquery.min',
         'app' : './app',
-        'config' : './config',
-        'AppCtrl' : 'views/lazyLoadRoute/AppCtrl'
+        'config' : './config'
     },
     shim: {
-        'angular' : {
+         'angular' : {
             exports : 'angular'
         },
         'ui.router' : ['angular'],
         'oc-lazy-load' : ['angular'],
         'domReady' : ['angular'],
         //'jQuery' : [],
-        //'app' : ['angular']
+        'app' : ['angular']
     },
     deps : ['bootstrap']
 });
