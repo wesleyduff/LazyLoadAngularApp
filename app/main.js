@@ -10,8 +10,10 @@ require.config({
         'ui.router': 'components/angular-ui-router/release/angular-ui-router',
         'oc-lazy-load' : 'components/oclazyload/dist/ocLazyLoad',
         'domReady': 'components/domReady/domReady',
-        'jQuery' : 'components/jQuery/dist/jquery.min',
-        'app' : 'app'
+        //'jQuery' : 'components/jQuery/dist/jquery.min',
+        'app' : './app',
+        'config' : './config',
+        'AppCtrl' : 'views/lazyLoadRoute/AppCtrl'
     },
     shim: {
         'angular' : {
@@ -20,7 +22,8 @@ require.config({
         'ui.router' : ['angular'],
         'oc-lazy-load' : ['angular'],
         'domReady' : ['angular'],
-        'jQuery' : []
+        //'jQuery' : [],
+        //'app' : ['angular']
     },
     deps : ['bootstrap']
 });
