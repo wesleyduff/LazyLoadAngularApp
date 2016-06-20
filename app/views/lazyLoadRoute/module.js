@@ -3,7 +3,7 @@
     angular.module('marketingAdmin')
     .controller('AppCtrl', ['$scope', function ($scope) {
 
-        $scope.title = "Welcome!";
+        $scope.title = "Welcome! Conroller has been Lazy Loaded!";
 
     }]);
 //})

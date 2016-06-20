@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1>Lazy Loading Controller and Module</h1>
+        <h2>{{title}}</h2>
+        <p class="lead">
+            load angular components on the fly
+            - Controller
+            -- controller takes a service module
+        <p>
+
+       <ul>
+           <li ng-repeat="vehicle in vehicleListService">
+               {{vehicle.make}}
+           </li>
+       </ul>
+
+    </div>
+</div>

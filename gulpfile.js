@@ -2,6 +2,11 @@ var gulp = require('gulp'),
     runSequence = require('run-sequence'),
     newVer;
 
+/**
+ * Use gulp's rjs to minfiy / combine the require config file
+ */
+
+
 gulp.task('clean', function() {
     var clean = require('gulp-clean');
 
