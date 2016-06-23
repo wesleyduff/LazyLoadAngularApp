@@ -1,10 +1,10 @@
-angular.module('store', [
+angular.module('lazyCtrlModule', [
     {
         name : "vehicles",
         files : ["angular.service.vehicles.js"]
     }    
 ])
-.controller('StoreCtrl', ['$scope', 'vehicleListService', function ($scope, vehicleListService) {
+.controller('lazyCtrlModuleCtrl', ['$scope', 'vehicleListService', function ($scope, vehicleListService) {
 
     $scope.title = "Welcome!";
     $scope.vehicleListService = vehicleListService.inventory;

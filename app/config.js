@@ -72,17 +72,32 @@ define(['app'], function(app){
             .state('lazyCtrlModule',
                 {
                     url : "/lazyCtrlModule",
-                    templateUrl : "views/store/index.html",
-                    controller : 'StoreCtrl',
+                    templateUrl : "views/lazyCtrlModule/index.html",
+                    controller : 'lazyCtrlModuleCtrl',
                     resolve : {
                         load : function($ocLazyLoad) {
                                 return $ocLazyLoad.load({
-                                    name : 'storeCtrl',
-                                    files : ['views/store/store.js']
+                                    name : 'lazyCtrlModuleCtrl',
+                                    files : ['views/lazyCtrlModule/main.js']
                                 });
                         }
                     }
                 }
             )
+            .state('appWithinApp',
+                {
+                    url : "/appWithinApp",
+                    templateUrl : "views/store/index.html",
+                    controller : "StoreCtrl",
+                    resolve : {
+                        load : function($ocLazyLoad) {
+                            return $ocLazyLoad.load({
+                                name: 'StoreCtrl',
+                                files : ['views/store/main.js']
+                            })
+                        }
+                    }
+                        
+                })
     });
 });

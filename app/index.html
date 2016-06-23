@@ -12,8 +12,13 @@
 <body>
 
 <div ng-include ="'resources/includes/navbar.html'"></div>
+<div class="container">
+    <div class="row">
+        <div ng-include="'resources/includes/sidebar.html'"></div>
+        <div ui-view class="main-view col-xs-12 col-md-8"></div>
+    </div>
+</div>
 
-<div ui-view class="main-view"></div>
 <div ui-view name="store"></div>
 
 </body>
