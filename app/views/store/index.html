@@ -1,16 +1,38 @@
 <div class="jumbotron">
-    <h1>Lazy Loading Controller and Module</h1>
+    <h1>Lazy Loading Controller / module</h1>
     <h2>{{title}}</h2>
     <p class="lead">
         load angular components on the fly
-        - Controller
-        -- controller takes a service module
+        <ul>
+            <li>Controller - shop controller</li>
+            <li>Verhicle Service - Provides a list of Vehicle Makes</li>
+            <li>
+                Module : [ Weather Module ]
+                <ul>
+                    <li>Loads : 
+                        <ul>
+                            <li>
+                                <dl>
+                                    <dt>css</dt>
+                                    <dt>main.js - Config</dt>
+                                    <dt>weather controller</dt>
+                                    <dt>weather service</dt>
+                                </dl>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     <p>
-
+    <h3>Vehicle List Service</h3>
    <ul>
        <li ng-repeat="vehicle in vehicleListService">
            {{vehicle.make}}
        </li>
    </ul>
+   
+   <h2>App Module</h2>
+   <div ng-include="'views/store/modules/weather/index.html'"></div>
 
 </div>

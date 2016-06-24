@@ -77,7 +77,7 @@ define(['app'], function(app){
                     resolve : {
                         load : function($ocLazyLoad) {
                                 return $ocLazyLoad.load({
-                                    name : 'lazyCtrlModuleCtrl',
+                                    name : 'lazyCtrlModule',
                                     files : ['views/lazyCtrlModule/main.js']
                                 });
                         }
