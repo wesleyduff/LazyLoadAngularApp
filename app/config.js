@@ -88,11 +88,11 @@ define(['app'], function(app){
                 {
                     url : "/appWithinApp",
                     templateUrl : "views/store/index.html",
-                    controller : "StoreCtrl",
+                    controller : "storeCtrl",
                     resolve : {
                         load : function($ocLazyLoad) {
                             return $ocLazyLoad.load({
-                                name: 'StoreCtrl',
+                                name: 'storeModule',
                                 files : ['views/store/main.js']
                             })
                         }
