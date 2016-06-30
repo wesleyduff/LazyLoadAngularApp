@@ -12,6 +12,7 @@ define(['app'], function(app){
         $ocLazyLoadProvider.config({
              events: true,
              debut: true,
+             jsLoader : requirejs,
              modules : [
                  {
                      name: 'd3',
@@ -99,5 +100,26 @@ define(['app'], function(app){
                     }
                         
                 })
+            /*
+            Lazy Load in the javascript file that uses require.js to combine all necessary files. 
+            Take that minified file and lazy load it in.
+            */
+            .state('requireMinifiedLazyLoad',
+                {
+                    url : "/requireMinifiedLazyLoad",
+                    templateUrl: "views/requireMinifiedLazy/index.html",
+                    controller : "RmlCtrl",
+                    resolve : {
+                        load : function($ocLazyLoad){
+                            return $ocLazyLoad.load({
+                                name : 'requireMinifiedLazyLoadModule',
+                                files : [
+                                    'views/requireMinifiedLazy/scripts/main-bundlemin.js'
+                                ]
+                            })
+                        }
+                    }
+                }
+            )
     });
 });

@@ -1,0 +1,1 @@
+define("controller",["./module"],function(l){console.dir(l);var o=function(l){l.title="Title from rml controller"};l.controller("RmlCtrl",["$scope",o])}),define("main",["module","controller"],function(l,o){l.value("a",123)});

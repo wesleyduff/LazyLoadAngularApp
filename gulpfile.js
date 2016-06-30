@@ -136,4 +136,62 @@ gulp.task('minify', ['clean', 'combine'], function(){
             }
         }))
         .pipe(gulp.dest('./app/dist/minified/'))
+});
+
+gulp.task('minify-required-files', function(){
+    var amdOptimize = require('amd-optimize');
+    var concat = require('gulp-concat');
+ return gulp.src('./app/views/requireMinifiedLazy/main.js')
+        .pipe(amdOptimize('main'))
+        .pipe(concat('main-bundle.js'))
+	    .pipe(gulp.dest('./dist2'));
+});
+
+gulp.task('bundle', [], function(){
+    var minify = require('gulp-minify');
+    var concat = require('gulp-concat');
+    var flatmap = require('gulp-flatmap');
+     var destination = "";
+    gulp.src('app/views/**/bundle/*.js', {base: 'app/views/'})
+                                .pipe(
+                                    flatmap(function(stream, file){
+                                       
+                                        var bundleCharLength = "bundle".length;
+                                        destination = file.path.slice(0, file.path.lastIndexOf('/'));
+                                        destination = destination.slice(0, destination.lastIndexOf('/'));
+                                        destination = destination.slice(destination.lastIndexOf('/') + 1, destination.length);
+                                        return stream
+                                            .pipe(concat('concat.js'))
+                                            .pipe(minify({
+                                                        ext: {
+                                                           // src: '-debug.js',
+                                                            min: 'min.js'
+                                                        }
+                                                    }))
+                                            
+                                    })
+                                    
+                                )
+                                .pipe(gulp.dest(function(file){
+                                                var destPath = './app/views/' + destination + '/bundle/dist/';
+                                                return destPath;
+                                            }));
+                                
 })
+
+var path = require('path');
+var folders = require('gulp-folders');
+var minify = require('gulp-minify');
+var concat = require('gulp-concat');
+gulp.task('folders', folders('app/views/', function(folder){
+    var destination = path.join('app/views', folder, '/bundle/*.js');
+    return gulp.src(destination)
+        .pipe(concat('concat.js'))
+        .pipe(minify({
+            ext: {
+               // src: '-debug.js',
+                min: 'min.js'
+            }
+        }))
+        .pipe(gulp.dest(path.join('app/views', folder, '/bundle/build/')))
+}));
